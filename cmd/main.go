@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	db.InitMongo()
+	db.InitMongoDB()
 	r := mux.NewRouter()
 
 	h := handler.NewTaskHandler()

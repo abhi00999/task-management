@@ -17,4 +17,4 @@
 .DS_Store
 
 # Go mod cache
-/pkg/
+# /pkg/
