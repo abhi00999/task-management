@@ -21,6 +21,10 @@ func NewTaskHandler() *TaskHandler {
 	return &TaskHandler{service: service.NewTaskService()}
 }
 
+func (h *TaskHandler) Health(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("healhty")
+}
+
 func (h *TaskHandler) CreateTask(w http.ResponseWriter, r *http.Request) {
 	var task models.Task
 	_ = json.NewDecoder(r.Body).Decode(&task)

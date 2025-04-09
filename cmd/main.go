@@ -15,9 +15,11 @@ func main() {
 
 	h := handler.NewTaskHandler()
 
+	r.HandleFunc("/health", h.Health).Methods("GET")
+
 	r.HandleFunc("/tasks", h.CreateTask).Methods("POST")
 	r.HandleFunc("/tasks", h.GetTasks).Methods("GET")
-	r.HandleFunc("/tasks/{id}", h.UpdateTask).Methods("PUT")
+	r.HandleFunc("/tasks/{id}", h.UpdateTask).Methods("PATCH")
 	r.HandleFunc("/tasks/{id}", h.DeleteTask).Methods("DELETE")
 
 	log.Println("🚀 Server running on :8080")
