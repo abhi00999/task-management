@@ -27,33 +27,35 @@ Pagination and filtering are handled via query parameters for scalability.
 
 # How to Run the Service
 
---> Clone the repository: git clone git@github.com:abhi00999/task-management.git
-cd task-management
-Start your local MongoDB server (e.g., mongod or MongoDB Atlas)
+- Clone the repository: git clone git@github.com:abhi00999/task-management.git
+- cd task-management
+- Start your local MongoDB server (e.g., mongod or MongoDB Atlas)
 
 Install dependencies:
-go mod tidy
+- go mod tidy
 
 Run the server:
-
-go run ./cmd/main.go
-The service will be available at http://localhost:8080
+- go run ./cmd/main.go
+- The service will be available at http://localhost:8080
 
 # 📖 API Documentation
 
 Base URL: http://localhost:8080
 
 Health Check
-GET /health
+- GET /health
+
 Response: "healthy"
 
 Create Task
-POST /tasks
+- POST /tasks
+
 Request Body:
 {
   "title": "Write unit tests",
   "status": "Pending"
 }
+
 Response:
 {
   "id": "654fc0e0f1fbb01234567890",
@@ -62,7 +64,8 @@ Response:
 }
 
 Get Tasks
-GET /tasks?status=Completed&limit=10&skip=0
+- GET /tasks?status=Completed&limit=10&skip=0
+
 Response:
 [
   {
@@ -73,17 +76,19 @@ Response:
 ]
 
 Update Task
-PUT /tasks/{id}
+- PUT /tasks/{id}
+
 Request Body:
 {
   "title": "Write tests (updated)",
   "status": "Completed"
 }
+
 Response: 200 OK
 
 Delete Task
-DELETE /tasks/{id}
-Response: 204 No Content
+- DELETE /tasks/{id}
+- Response: 204 No Content
 
 # Microservice Concepts Demonstrated
 Single Responsibility Principle:
